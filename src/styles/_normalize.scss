@@ -223,10 +223,23 @@ mark {
 @if $legacy_support_for_ie {
   p,
   pre {
-    margin: 1em 0;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 }
 
+p {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 // Corrects font family set oddly in IE6, S4/5, Chrome
 // en.wikipedia.org/wiki/User:Davidgothberg/Test59
 
@@ -309,7 +322,7 @@ sub {
   menu,
   ol,
   ul {
-    margin: 1em 0;
+    margin: 0;
   }
 }
 
@@ -326,6 +339,16 @@ sub {
   ul {
     padding: 0 0 0 40px;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 
 // Corrects list images handled incorrectly in IE7
