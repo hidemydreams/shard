@@ -1,0 +1,14 @@
+@import './styles/normalize.scss';
+@import './styles/variables.scss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
