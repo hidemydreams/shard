@@ -512,6 +512,10 @@ textarea {
 
 // Remove most spacing between table cells
 
+* {
+  box-sizing: border-box;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
