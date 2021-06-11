@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import laptopImage from '../../assets/images/laptop.svg';
 import manWithLaptopImage from '../../assets/images/man-with-laptop.svg';
 import arrowImage from '../../assets/images/svg-arrow.svg';
 import './style.scss';
 
-const LandingDevelopment: FC = () => {
+const LandingDevelopment: FC<RouteComponentProps> = () => {
   return (
     <div className="landing">
       <div className="landing__title landing-title">

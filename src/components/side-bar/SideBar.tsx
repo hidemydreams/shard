@@ -1,6 +1,7 @@
-import React, { FC, LegacyRef, useRef } from 'react';
+import React, { FC, LegacyRef } from 'react';
 import arrow from '../../assets/images/arrow.svg';
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 interface ISideBarProps {
   refProp: LegacyRef<HTMLDivElement>;
@@ -35,35 +36,45 @@ const SideBar: FC<ISideBarProps> = ({ refProp, sideBarRef }) => {
         <nav className="service-nav">
           <ul className="service-nav__list">
             <li className="service-nav__link">
-              <p className="service-nav__link-number">01</p>
-              <p className="service-nav__link-text">Разработка лендинга</p>
-              <div className="service-nav__link-line"></div>
+              <Link to="/web/1">
+                <p className="service-nav__link-number">01</p>
+                <p className="service-nav__link-text">Разработка лендинга</p>
+                <div className="service-nav__link-line"></div>
+              </Link>
             </li>
             <li className="service-nav__link service-nav__link--active">
-              <p className="service-nav__link-number">02</p>
-              <p className="service-nav__link-text">Разработка промосайта</p>
-              <div className="service-nav__link-line"></div>
+              <Link to="/web/2">
+                <p className="service-nav__link-number">02</p>
+                <p className="service-nav__link-text">Разработка промосайта</p>
+                <div className="service-nav__link-line"></div>
+              </Link>
             </li>
             <li className="service-nav__link">
-              <p className="service-nav__link-number">03</p>
-              <p className="service-nav__link-text">
-                Разработка корпоративного сайта
-              </p>
-              <div className="service-nav__link-line"></div>
+              <Link to="/web/3">
+                <p className="service-nav__link-number">03</p>
+                <p className="service-nav__link-text">
+                  Разработка корпоративного сайта
+                </p>
+                <div className="service-nav__link-line"></div>
+              </Link>
             </li>
             <li className="service-nav__link">
-              <p className="service-nav__link-number">04</p>
-              <p className="service-nav__link-text">
-                Разработка интернет-магазина
-              </p>
-              <div className="service-nav__link-line"></div>
+              <Link to="/web/4">
+                <p className="service-nav__link-number">04</p>
+                <p className="service-nav__link-text">
+                  Разработка интернет-магазина
+                </p>
+                <div className="service-nav__link-line"></div>
+              </Link>
             </li>
             <li className="service-nav__link">
-              <p className="service-nav__link-number">05</p>
-              <p className="service-nav__link-text">
-                Разработка интернет-портала
-              </p>
-              <div className="service-nav__link-line"></div>
+              <Link to="/web/">
+                <p className="service-nav__link-number">05</p>
+                <p className="service-nav__link-text">
+                  Разработка интернет-портала
+                </p>
+                <div className="service-nav__link-line"></div>
+              </Link>
             </li>
           </ul>
         </nav>

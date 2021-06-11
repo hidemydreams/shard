@@ -100,6 +100,10 @@
     position: relative;
     transition: 0.2s;
 
+    a {
+      text-decoration: none;
+    }
+
     &:hover {
       background-color: $white-opacity;
     }

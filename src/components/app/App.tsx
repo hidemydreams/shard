@@ -1,9 +1,16 @@
-import React, { FC, LegacyRef, useRef } from 'react';
+import React, { FC, useRef } from 'react';
 import LandingDevelopment from '../../pages/LandingDevelopment/LandingDevelopment';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import SideBar from '../side-bar/SideBar';
 import './style.scss';
+
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 const App: FC = () => {
   const mainContent = useRef<HTMLElement>(null);
@@ -19,14 +26,14 @@ const App: FC = () => {
     ) {
       const footerTop =
         document.documentElement.scrollHeight - footer.current?.offsetHeight;
-      console.log(document.documentElement.scrollHeight, 'doc height');
-      console.log(footer.current?.offsetHeight, 'footer height');
-      console.log('footer top', footerTop);
+      console.log(footer.current?.getBoundingClientRect());
+
       const footerHeight = footer.current?.offsetHeight;
       const sidebarContentPos =
         sideBarContent.current.offsetHeight +
         document.documentElement.scrollTop;
-      console.log(sidebarContentPos);
+
+      footer.current.scrollTop = footer.current.scrollHeight;
 
       if (sidebarContentPos > footerTop) {
         sideBarContent.current.style.bottom = `${footerHeight}px`;
@@ -49,20 +56,28 @@ const App: FC = () => {
   window.addEventListener('scroll', removeFixedNavbar);
 
   return (
-    <div className="app">
-      <div className="wrapper">
-        <Header />
-        <main ref={mainContent} className="main-content">
-          <div className="main-content__inner">
-            <SideBar sideBarRef={sideBar} refProp={sideBarContent} />
-            <div className="main-content__page">
-              <LandingDevelopment />
+    <Router>
+      <div className="app">
+        <div className="wrapper">
+          <Header />
+          <main ref={mainContent} className="main-content">
+            <div className="main-content__inner">
+              <SideBar sideBarRef={sideBar} refProp={sideBarContent} />
+              <div className="main-content__page">
+                <Switch>
+                  <Route
+                    path={'/web/:id'}
+                    render={(props) => <LandingDevelopment {...props} />}
+                  />
+                  <Redirect from="/" to="/web/1" />
+                </Switch>
+              </div>
             </div>
-          </div>
-        </main>
-        <Footer refProp={footer} />
+          </main>
+          <Footer refProp={footer} />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 };
 
