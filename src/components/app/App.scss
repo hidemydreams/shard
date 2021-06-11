@@ -1,5 +1,13 @@
 @import '../../styles/variables';
 
+html {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+}
+
 .text {
   font-size: 40px;
   color: white;
@@ -8,7 +16,6 @@
 
 .landing {
   color: $text-color;
-
   padding-right: 3rem;
 
   &__intro {
@@ -58,4 +65,17 @@
   &__image {
     margin: 0 auto;
   }
+}
+
+.main-content__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-content__page {
+  margin-left: 500px;
+}
+
+.content-margin {
+  margin-top: 51px;
 }

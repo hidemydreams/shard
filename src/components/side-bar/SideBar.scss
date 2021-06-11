@@ -10,6 +10,11 @@
   top: 0;
   box-shadow: 0px 0px 30px 10px #000000;
 
+  &__inner {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+
   &__content {
     margin-top: 30%;
     padding-left: 40px;

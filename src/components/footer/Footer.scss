@@ -6,6 +6,11 @@
   position: relative;
   margin-top: 40px;
 
+  &__content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   &__column {
     display: flex;
     justify-content: space-between;

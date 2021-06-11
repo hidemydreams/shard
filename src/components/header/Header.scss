@@ -2,11 +2,28 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.1rem 4rem;
+  justify-content: center;
   position: relative;
   z-index: 1000;
+  transition: 0.2s;
+
+  &.sticky {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__content {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 50px;
+  }
 
   &__logo {
     cursor: pointer;
