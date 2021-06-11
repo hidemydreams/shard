@@ -3,8 +3,8 @@ import LandingDevelopment from '../../pages/LandingDevelopment/LandingDevelopmen
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import SideBar from '../side-bar/SideBar';
+import './style.scss';
 
-import './App.scss';
 const App: FC = () => {
   const mainContent = useRef<HTMLElement>(null);
   const sideBarContent = useRef<HTMLDivElement>(null);

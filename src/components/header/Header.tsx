@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react';
 import logo from '../../assets/images/Logotype.svg';
-import './Header.scss';
+import './style.scss';
 
 const Header: FC = () => {
   const header = useRef<HTMLHeadingElement>(null);

@@ -1,5 +1,5 @@
-import React, { FC, LegacyRef, useRef } from 'react';
-import './Footer.scss';
+import React, { FC, LegacyRef } from 'react';
+import './style.scss';
 
 interface IFooterProps {
   refProp: LegacyRef<HTMLElement>;

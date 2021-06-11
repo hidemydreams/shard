@@ -1,6 +1,6 @@
 import React, { FC, LegacyRef, useRef } from 'react';
 import arrow from '../../assets/images/arrow.svg';
-import './SideBar.scss';
+import './style.scss';
 
 interface ISideBarProps {
   refProp: LegacyRef<HTMLDivElement>;
@@ -15,7 +15,10 @@ const SideBar: FC<ISideBarProps> = ({ refProp, sideBarRef }) => {
           <h1 className="sidebar__title">Услуги</h1>
           <nav className="sidebar__services services-nav">
             <div className="services-nav__row">
-              <p className="services-nav__active-link">WEB</p>
+              <div className="services-nav__active-group">
+                <h2 className="services-nav__title">WEB</h2>
+                <h2 className="services-nav__overlay">WEB</h2>
+              </div>
               <p className="services-nav__next-link">
                 <img src={arrow} alt="Arrow Icon" /> Mobile
               </p>
