@@ -14,59 +14,6 @@ html {
   margin-left: 520px;
 }
 
-.landing {
-  color: $text-color;
-  padding-right: 3rem;
-
-  &__intro {
-    max-width: 700px;
-    margin: 40px 0px;
-    line-height: 1.4;
-  }
-}
-
-.landing-title {
-  &__number {
-    color: #5c5c5c;
-  }
-  &__text {
-    font-size: 2.8rem;
-    color: $text-color;
-    font-weight: $black;
-    max-width: 200px;
-    letter-spacing: 4px;
-    line-height: 1.3;
-  }
-}
-
-.landing-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-  max-width: 770px;
-  justify-content: space-between;
-
-  &__content {
-    max-width: 400px;
-  }
-
-  &__title {
-    font-size: 2.3rem;
-    margin-bottom: 40px;
-    font-weight: $bold;
-    letter-spacing: 1.2px;
-  }
-
-  &__description {
-    font-size: 1.1rem;
-    line-height: 1.3;
-  }
-
-  &__image {
-    margin: 0 auto;
-  }
-}
-
 .main-content__inner {
   max-width: 1400px;
   margin: 0 auto;

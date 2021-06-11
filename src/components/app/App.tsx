@@ -21,16 +21,17 @@ const App: FC = () => {
         document.documentElement.scrollHeight - footer.current?.offsetHeight;
       console.log(document.documentElement.scrollHeight, 'doc height');
       console.log(footer.current?.offsetHeight, 'footer height');
+      console.log('footer top', footerTop);
       const footerHeight = footer.current?.offsetHeight;
-
-      if (
+      const sidebarContentPos =
         sideBarContent.current.offsetHeight +
-          document.documentElement.scrollTop >
-        footerTop - 150
-      ) {
+        document.documentElement.scrollTop;
+      console.log(sidebarContentPos);
+
+      if (sidebarContentPos > footerTop) {
         sideBarContent.current.style.bottom = `${footerHeight}px`;
       } else {
-        sideBarContent.current.style.bottom = `100px`;
+        sideBarContent.current.style.bottom = `initial`;
       }
     }
   };
