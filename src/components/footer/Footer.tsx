@@ -1,9 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, LegacyRef, useRef } from 'react';
 import './Footer.scss';
 
-const Footer: FC = () => {
+interface IFooterProps {
+  refProp: LegacyRef<HTMLElement>;
+}
+
+const Footer: FC<IFooterProps> = ({ refProp }) => {
   return (
-    <footer className="footer">
+    <footer ref={refProp} className="footer">
       <div className="footer__content">
         <div className="footer__column">
           <div className="footer__contacts">

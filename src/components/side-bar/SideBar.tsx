@@ -1,11 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, LegacyRef, useRef } from 'react';
 import arrow from '../../assets/images/arrow.svg';
 import './SideBar.scss';
 
-const SideBar: FC = () => {
+interface ISideBarProps {
+  refProp: LegacyRef<HTMLDivElement>;
+  sideBarRef: LegacyRef<HTMLDivElement>;
+}
+
+const SideBar: FC<ISideBarProps> = ({ refProp, sideBarRef }) => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar__inner">
+    <aside ref={sideBarRef} className="sidebar">
+      <div ref={refProp} className="sidebar__inner">
         <div className="sidebar__content">
           <h1 className="sidebar__title">Услуги</h1>
           <nav className="sidebar__services services-nav">

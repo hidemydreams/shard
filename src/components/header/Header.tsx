@@ -5,12 +5,12 @@ import './Header.scss';
 const Header: FC = () => {
   const header = useRef<HTMLHeadingElement>(null);
 
-  const setStickyHeader = () => {
+  const toggleHeaderBackground = () => {
     if (header.current !== null) {
       header.current.classList.toggle('sticky', window.scrollY > 100);
     }
   };
-  window.addEventListener('scroll', setStickyHeader);
+  window.addEventListener('scroll', toggleHeaderBackground);
   return (
     <header ref={header} className="header">
       <div className="header__content">
