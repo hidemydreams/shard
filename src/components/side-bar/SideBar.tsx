@@ -1,14 +1,38 @@
 import React, { FC, LegacyRef } from 'react';
 import arrow from '../../assets/images/arrow.svg';
 import './style.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { data, INavItemInterface } from '../../data/data';
 
 interface ISideBarProps {
   refProp: LegacyRef<HTMLDivElement>;
   sideBarRef: LegacyRef<HTMLDivElement>;
+  handleMenuItemClick: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 }
 
-const SideBar: FC<ISideBarProps> = ({ refProp, sideBarRef }) => {
+const SideBar: FC<ISideBarProps> = ({
+  refProp,
+  sideBarRef,
+  handleMenuItemClick,
+}) => {
+  const renderNavItems = () => {
+    return data.map((item: INavItemInterface) => {
+      return (
+        <li
+          onClick={(e) => handleMenuItemClick(e)}
+          key={item.id}
+          id={item.id}
+          className="service-nav__link"
+        >
+          <NavLink to={`/web/${item.name}`}>
+            <p className="service-nav__link-number">{item.numberTitle}</p>
+            <p className="service-nav__link-text">{item.title}</p>
+            <div className="service-nav__link-line"></div>
+          </NavLink>
+        </li>
+      );
+    });
+  };
   return (
     <aside ref={sideBarRef} className="sidebar">
       <div ref={refProp} className="sidebar__inner">
@@ -34,49 +58,7 @@ const SideBar: FC<ISideBarProps> = ({ refProp, sideBarRef }) => {
           </nav>
         </div>
         <nav className="service-nav">
-          <ul className="service-nav__list">
-            <li className="service-nav__link">
-              <Link to="/web/1">
-                <p className="service-nav__link-number">01</p>
-                <p className="service-nav__link-text">Разработка лендинга</p>
-                <div className="service-nav__link-line"></div>
-              </Link>
-            </li>
-            <li className="service-nav__link service-nav__link--active">
-              <Link to="/web/2">
-                <p className="service-nav__link-number">02</p>
-                <p className="service-nav__link-text">Разработка промосайта</p>
-                <div className="service-nav__link-line"></div>
-              </Link>
-            </li>
-            <li className="service-nav__link">
-              <Link to="/web/3">
-                <p className="service-nav__link-number">03</p>
-                <p className="service-nav__link-text">
-                  Разработка корпоративного сайта
-                </p>
-                <div className="service-nav__link-line"></div>
-              </Link>
-            </li>
-            <li className="service-nav__link">
-              <Link to="/web/4">
-                <p className="service-nav__link-number">04</p>
-                <p className="service-nav__link-text">
-                  Разработка интернет-магазина
-                </p>
-                <div className="service-nav__link-line"></div>
-              </Link>
-            </li>
-            <li className="service-nav__link">
-              <Link to="/web/">
-                <p className="service-nav__link-number">05</p>
-                <p className="service-nav__link-text">
-                  Разработка интернет-портала
-                </p>
-                <div className="service-nav__link-line"></div>
-              </Link>
-            </li>
-          </ul>
+          <ul className="service-nav__list">{renderNavItems()}</ul>
         </nav>
       </div>
     </aside>

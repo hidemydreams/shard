@@ -18,6 +18,12 @@ const App: FC = () => {
   const footer = useRef<HTMLElement>(null);
   const sideBar = useRef<HTMLDivElement>(null);
 
+  const handleMenuItemClick = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ) => {
+    console.log(e.target);
+  };
+
   const removeFixedNavbar = () => {
     if (
       footer.current !== null &&
@@ -62,10 +68,15 @@ const App: FC = () => {
           <Header />
           <main ref={mainContent} className="main-content">
             <div className="main-content__inner">
-              <SideBar sideBarRef={sideBar} refProp={sideBarContent} />
+              <SideBar
+                handleMenuItemClick={handleMenuItemClick}
+                sideBarRef={sideBar}
+                refProp={sideBarContent}
+              />
               <div className="main-content__page">
                 <Switch>
                   <Route
+                    exact
                     path={'/web/:id'}
                     render={(props) => <LandingDevelopment {...props} />}
                   />
